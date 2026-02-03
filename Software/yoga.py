@@ -145,8 +145,8 @@ def check_current_pose(landmarks, pose_number, h, w):
 
     return is_correct
 
-
-cap = cv2.VideoCapture(0)
+# вмикання камери (0 - основна за замовчуванням камера, 1 - друга камера )
+cap = cv2.VideoCapture(1)
 
 while cap.isOpened():
     ret, frame = cap.read()

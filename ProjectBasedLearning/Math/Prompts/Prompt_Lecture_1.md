@@ -28,4 +28,4 @@
 
 # Format:
 1) опис роби українською;
-2) збережи опис у файлі ProjectBasedLearning\Math\Lecture_01_add_qwe.md
+2) збережи опис у файлі ProjectBasedLearning\Math\Lecture_01_add_gem.md

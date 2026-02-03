@@ -20,4 +20,6 @@ https://op.edu.ua/education/programs/components/14128
 https://op.edu.ua/education/programs/components/14130
 
 ## Дискретна математика
+https://op.edu.ua/education/programs/components/14132
+
 

@@ -5,7 +5,6 @@ classDiagram
     direction LR
     class YogaPose {
         name
-        description
         sanskrit_name
         type
     }
@@ -19,46 +18,87 @@ classDiagram
     note for Asana "Асана: Свідома йога-поза"
 
     class Effect {
-        description
     }
     note for Effect "Вплив: Позитивні ефекти пози"
 
     class Instruction {
         step_number
-        action
-        breathing_instruction
         duration_breaths
     }
     note for Instruction "Інструкція: Покрокові вказівки"
 
     class Modification {
-        description
-        reason
         difficulty_level_change
     }
     note for Modification "Модифікація: Варіанти виконання пози"
 
     class CommonMistake {
-        description
-        consequence
-        fix_suggestion
     }
     note for CommonMistake "ПоширенаПомилка: Типові помилки та їх виправлення"
 
     class Precaution {
-        condition
-        action
         warning_level
     }
     note for Precaution "ЗапобіжнийЗахід: Заходи безпеки та попередження"
 
+    class Description {
+        text
+    }
+    note for Description "Опис: Детальний текстовий опис"
+
+    class Action {
+        text
+    }
+    note for Action "Дія: Детальний опис дії"
+
+    class Condition {
+        text
+    }
+    note for Condition "Умова: Опис умови"
+
+    class Reason {
+        text
+    }
+    note for Reason "Причина: Опис причини"
+
+    class Consequence {
+        text
+    }
+    note for Consequence "Наслідок: Опис наслідків"
+
+    class FixSuggestion {
+        text
+    }
+    note for FixSuggestion "ПропозиціяВиправлення: Пропозиція щодо виправлення"
+
+    class BreathingInstruction {
+        text
+    }
+    note for BreathingInstruction "ІнструкціяДихання: Вказівки щодо дихання"
+
+
     YogaPose <|-- Asana : є
 
+    YogaPose "1" o-- "1" Description : має
     YogaPose "1" -- "*" Effect : має
     YogaPose "1" -- "*" Instruction : включає
     YogaPose "1" -- "*" Modification : має_модифікації
     YogaPose "1" -- "*" CommonMistake : має_помилки
     YogaPose "1" -- "*" Precaution : вимагає
 
+    Effect "1" o-- "1" Description : має
+
+    Instruction "1" o-- "1" Action : описує
+    Instruction "1" o-- "1" BreathingInstruction : використовує
     Instruction "1" -- "0..1" YogaPose : починається_з
+
+    Modification "1" o-- "1" Description : має
+    Modification "1" o-- "1" Reason : має
+
+    CommonMistake "1" o-- "1" Description : має
+    CommonMistake "1" o-- "1" Consequence : має
+    CommonMistake "1" o-- "1" FixSuggestion : має
+
+    Precaution "1" o-- "1" Condition : пов_язаний_з
+    Precaution "1" o-- "1" Action : описує
 ```

@@ -42,63 +42,63 @@ classDiagram
     note for Precaution "ЗапобіжнийЗахід: Заходи безпеки та попередження"
 
     class Description {
-        text
+        descr
     }
     note for Description "Опис: Детальний текстовий опис"
 
     class Action {
-        text
+        descr
     }
     note for Action "Дія: Детальний опис дії"
 
     class Condition {
-        text
+        descr
     }
     note for Condition "Умова: Опис умови"
 
     class Reason {
-        text
+        descr
     }
     note for Reason "Причина: Опис причини"
 
     class Consequence {
-        text
+        descr
     }
     note for Consequence "Наслідок: Опис наслідків"
 
     class FixSuggestion {
-        text
+        descr
     }
     note for FixSuggestion "ПропозиціяВиправлення: Пропозиція щодо виправлення"
 
     class BreathingInstruction {
-        text
+        descr
     }
     note for BreathingInstruction "ІнструкціяДихання: Вказівки щодо дихання"
 
 
     YogaPose <|-- Asana : є
 
-    YogaPose "1" o-- "*" Description : має
+    YogaPose "1" o-- "*" Description
     YogaPose "1" -- "*" Effect : має
     YogaPose "1" -- "*" Instruction : включає
     YogaPose "1" -- "*" Modification : має_модифікації
     YogaPose "1" -- "*" CommonMistake : має_помилки
     YogaPose "1" -- "*" Precaution : вимагає
 
-    Effect "1" o-- "*" Description : має
+    Effect "1" o-- "*" Description
 
-    Instruction "1" o-- "*" Action : описує
-    Instruction "1" o-- "*" BreathingInstruction : використовує
+    Instruction "1" o-- "*" Action
+    Instruction "1" o-- "*" BreathingInstruction
     Instruction "1" -- "0..1" YogaPose : починається_з
 
-    Modification "1" o-- "*" Description : має
-    Modification "1" o-- "*" Reason : має
+    Modification "1" o-- "*" Description
+    Modification "1" o-- "*" Reason
 
-    CommonMistake "1" o-- "*" Description : має
-    CommonMistake "1" o-- "*" Consequence : має
-    CommonMistake "1" o-- "*" FixSuggestion : має
+    CommonMistake "1" o-- "*" Description
+    CommonMistake "1" o-- "*" Consequence
+    CommonMistake "1" o-- "*" FixSuggestion
 
-    Precaution "1" o-- "*" Condition : пов_язаний_з
-    Precaution "1" o-- "*" Action : описує
+    Precaution "1" o-- "*" Condition
+    Precaution "1" o-- "*" Action
 ```

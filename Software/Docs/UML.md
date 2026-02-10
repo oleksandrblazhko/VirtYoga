@@ -79,26 +79,26 @@ classDiagram
 
     YogaPose <|-- Asana : є
 
-    YogaPose "1" o-- "1" Description : має
+    YogaPose "1" o-- "*" Description : має
     YogaPose "1" -- "*" Effect : має
     YogaPose "1" -- "*" Instruction : включає
     YogaPose "1" -- "*" Modification : має_модифікації
     YogaPose "1" -- "*" CommonMistake : має_помилки
     YogaPose "1" -- "*" Precaution : вимагає
 
-    Effect "1" o-- "1" Description : має
+    Effect "1" o-- "*" Description : має
 
-    Instruction "1" o-- "1" Action : описує
-    Instruction "1" o-- "1" BreathingInstruction : використовує
+    Instruction "1" o-- "*" Action : описує
+    Instruction "1" o-- "*" BreathingInstruction : використовує
     Instruction "1" -- "0..1" YogaPose : починається_з
 
-    Modification "1" o-- "1" Description : має
-    Modification "1" o-- "1" Reason : має
+    Modification "1" o-- "*" Description : має
+    Modification "1" o-- "*" Reason : має
 
-    CommonMistake "1" o-- "1" Description : має
-    CommonMistake "1" o-- "1" Consequence : має
-    CommonMistake "1" o-- "1" FixSuggestion : має
+    CommonMistake "1" o-- "*" Description : має
+    CommonMistake "1" o-- "*" Consequence : має
+    CommonMistake "1" o-- "*" FixSuggestion : має
 
-    Precaution "1" o-- "1" Condition : пов_язаний_з
-    Precaution "1" o-- "1" Action : описує
+    Precaution "1" o-- "*" Condition : пов_язаний_з
+    Precaution "1" o-- "*" Action : описує
 ```

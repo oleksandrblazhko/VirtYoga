@@ -22,7 +22,7 @@
 - приклади математичного опису IT-проєкту.
 
 # Context:
-1) опис функціональних вимог до IT-проєкту - FunctionReq.md
+1) опис функціональних вимог до IT-проєкту - Software\Docs\FunctionReq.md
 2) перелік файлів із описом за розділомами вищої математики - ProjectBasedLearning\Math\MathDocs\Math-lecture-*.txt
 3) план лекцій та практичних занять з вищої математики - ProjectBasedLearning\Math\MathDocs\Math-OPU-Lecture-Plan.md
 

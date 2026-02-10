@@ -36,7 +36,7 @@
 
 
 # Context:
-1) опис функціональних вимог до IT-проєкту - FunctionReq.md
+1) опис функціональних вимог до IT-проєкту - Software\Docs\FunctionReq.md
 2) файл із описом розділу вищої математики - ProjectBasedLearning\Math\MathDocs\Math-lecture-1.txt
 3) під час прикладів для Йога-вправ, попередньо надай текстовий опис вправи та матричний опис.
 

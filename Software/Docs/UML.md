@@ -4,56 +4,51 @@ Gemini CLI
 classDiagram
     direction LR
     class YogaPose {
-        +string name
-        +string description
-        +string sanskrit_name
-        +string type
-        +list<string> keywords
+        name
+        description
+        sanskrit_name
+        type
     }
     note for YogaPose "ЙогаПоза: Загальний опис пози"
 
     class Asana {
-        +boolean awareness_of_breath
-        +boolean maintained_without_tension
-        +boolean focus_stability_balance
+        awareness_of_breath
+        maintained_without_tension
+        focus_stability_balance
     }
     note for Asana "Асана: Свідома йога-поза"
 
     class Effect {
-        +string description
-        +list<string> body_parts_affected
-        +list<string> benefits
+        description
     }
     note for Effect "Вплив: Позитивні ефекти пози"
 
     class Instruction {
-        +int step_number
-        +string action
-        +list<string> body_part_focus
-        +string breathing_instruction
-        +string duration_breaths
+        step_number
+        action
+        breathing_instruction
+        duration_breaths
     }
     note for Instruction "Інструкція: Покрокові вказівки"
 
     class Modification {
-        +string description
-        +string reason
-        +list<string> props_used
-        +string difficulty_level_change
+        description
+        reason
+        difficulty_level_change
     }
     note for Modification "Модифікація: Варіанти виконання пози"
 
     class CommonMistake {
-        +string description
-        +string consequence
-        +string fix_suggestion
+        description
+        consequence
+        fix_suggestion
     }
     note for CommonMistake "ПоширенаПомилка: Типові помилки та їх виправлення"
 
     class Precaution {
-        +string condition
-        +string action
-        +string warning_level
+        condition
+        action
+        warning_level
     }
     note for Precaution "ЗапобіжнийЗахід: Заходи безпеки та попередження"
 

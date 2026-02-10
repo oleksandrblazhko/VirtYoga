@@ -12,8 +12,6 @@ classDiagram
     
     class Asana {
         sanskritName
-        spiritualAspect
-        consciousElement
     }
     
     class Category {
@@ -74,19 +72,31 @@ classDiagram
         name
         usage
     }
+    
+    class SpiritualAspect {
+        philosophicalContext
+        meditativeQuality
+    }
+    
+    class BreathingTechnique {
+        pranayamaMethod
+        breathRhythm
+    }
 
     Pose <|-- Asana
-    Asana "1" --> "1" Category : belongs to
-    Asana "1" --> "1" DifficultyLevel : has
-    Asana "1" --> "1" Description : describes
-    Asana "1" --> "*" Instructions : follows
-    Asana "1" --> "*" Benefits : provides
-    Asana "1" --> "*" Modifications : has
-    Asana "1" --> "*" CommonMistakes : contains
-    Asana "1" --> "*" SafetyMeasures : requires
-    Asana "*" --> "*" BodyPart : involves
-    Asana "*" --> "*" MuscleGroup : targets
-    Asana "*" --> "*" Equipment : uses
+    Pose "1" --> "1" Category : belongs to
+    Pose "1" --> "1" DifficultyLevel : has
+    Pose "1" --> "1" Description : described by
+    Pose "1" --> "*" Instructions : followed by
+    Pose "1" --> "*" Benefits : provides
+    Pose "1" --> "*" Modifications : has
+    Pose "1" --> "*" CommonMistakes : contains
+    Pose "1" --> "*" SafetyMeasures : requires
+    Pose "*" o-- "*" BodyPart : involves
+    Pose "*" o-- "*" MuscleGroup : targets
+    Pose "*" o-- "*" Equipment : uses
+    Asana "1" --> "1" SpiritualAspect : embodies
+    Asana "1" --> "*" BreathingTechnique : incorporates
     Benefits "*" --> "*" BodyPart : affects
     Benefits "*" --> "*" MuscleGroup : strengthens
 ```
@@ -127,5 +137,30 @@ classDiagram
 
 ### 9. Клас Equipment
 У документі згадуються допоміжні засоби: "ви можете покласти під голову блок для фітнес-йоги", "використовувати блок під руки або складений рушник під зап'ястя".
+
+### 10. Клас SpiritualAspect
+Цей клас було додано для відображення специфічних властивостей асан, які не притаманні загальним позам. У документі зазначено, що "Слово **"Асана"** походить із санскриту і буквально означає "сидіння" або "стале положення тіла", яке описує не просто позу, а свідоме, стале положення тіла, яке... має на меті зосередження, стабільність і внутрішню рівновагу". Це вказує на філософський контекст та медитаційну якість, які є невід'ємною частиною асан.
+
+### 11. Клас BreathingTechnique
+Документ наголошує, що асана "виконується з усвідомленням дихання". У розділі інструкцій часто згадується дихання: "Вдихніть", "Видихніть", "координуючи кожне дихання з потоком руху". Це відрізняє асани від простих фізичних поз, де дихання не є обов'язковим елементом.
+
+### 12. Типи зв'язків: асоціації та агрегації
+У діаграмі використовуються два типи зв'язків:
+- **Асоціації (-->):** Використовуються для зв'язків, які не мають чіткої семантики "ціле-частина", наприклад:
+  - "belongs to" (належить до) для категорії
+  - "described by" (описується) для опису
+  - "followed by" (виконується за допомогою) для інструкцій
+  - "provides" (надає) для переваг
+  - "embodies" (втілює) для духовного аспекту
+  - "incorporates" (включає) для технік дихання
+  - "affects" (впливає на) для впливу переваг на частини тіла
+  - "strengthens" (зміцнює) для впливу переваг на м'язові групи
+
+- **Агрегації (o--):** Використовуються для зв'язків типу "ціле-частина", наприклад:
+  - "involves" (включає) для частин тіла, які задіяні в позі
+  - "targets" (спрямована на) для м'язових груп, які досягаються позою
+  - "uses" (використовує) для обладнання, яке використовується в позі
+
+Це краще відображає різницю між асоціаціями та агрегаціями, враховуючи їхню семантику в контексті йога-поз.
 
 Зв'язки між класами визначені на основі семантики тексту. Наприклад, зв'язок "Asana 1 --> * Benefits" показує, що одна асана може мати багато переваг, а "Asana * --> * BodyPart" вказує, що асана може задіяти багато частин тіла, і одна частина тіла може бути задіяна в багатьох асанах.

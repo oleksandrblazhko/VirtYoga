@@ -1,8 +1,8 @@
 # Глосарій термінів опису функціональних та нефункціональних вимог до програми
 
 1) бібліотека Mediapipe - https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker?hl=en
-2) скелетон тіла користувача - 33 суглоби тіла людини:
-3) типи суглобів скелетону користувача (номер-назва):
+2) скелетон тіла користувача - це 33 суглоби тіла людини
+3) типи суглобів тіла людини <номер суглобу>-<назва суглобу>:
   0-nose, 1-left eye, 2-left eye, 3-left eye, 4-right eye, 5-right eye, 6-right eye, 7-left ear, 8-right ear, 9-mouth (left), 10-mouth (right), 11-left shoulder, 
   12-right shoulder, 13-left elbow, 14-right elbow, 15-left wrist, 16-right wrist, 17-left pinky, 18-right pinky, 19-left index, 20-right index, 21-left thumb, 
   22-right thumb, 23-left hip, 24-right hip, 25-left knee, 26-right knee, 27-left ankle, 28-right ankle, 29-left heel, 30-right heel, 31-left foot index, 
